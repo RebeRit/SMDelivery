@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>상명딜리버리 | 문의사항</title>
+    <link rel="stylesheet" href="css/common_css.css">
+    <link rel="shortcut icon" href="images/Favicon.ico">
+    <script>
+        function checkQuestion(){
+            if(confirm("문의사항을 보내시겠습니까?") == true){
+                alert("문의사항이 접수되었습니다.");
+                window.close();
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body onresize = "parent.resizeTo(600,600)" onload="parent.resizeTo(600,600)">
+
+    <div id="page">
+ 
+        <header>
+            <div id="logo"><a href = "index.html">
+                <img src="images/logo_main.png" style = "width: 200px; height: 80px;" alt="Logo">
+                </a>
+            </div>
+        </header>
+    </div>
+
+    <div style = "height: 50px; text-align: center;">
+        <h1 style = "margin-top: 5px; color: cornflowerblue">문의사항 접수하기</h1>
+    </div>
+    <div style = "margin-top: 5px; padding: 0 5px; text-align: center">
+        <p>사용자의 성함을 적어주세요</p>
+        <input type = "text" name = "name" size = "24">
+    </div>
+    <div style = "margin-top: 5px; padding: 0 5px; text-align: center">
+        <p>카테고리를 골라주세요</p>
+        <select name = "category">
+            <option value = "" selected = "selected">--- 선택해 주세요 ---</option>
+            <option value = "cat_001">너무 비싼 가격</option>
+            <option value = "cat_002">너무 느린 배달</option>
+            <option value = "cat_003">너무 비싼 배달비</option>
+            <option value = "cat_004">불친절한 가게</option>
+            <option value = "cat_005">이벤트 문의</option>
+        </select>
+    </div>
+    <div style = "margin-top: 5px; padding: 0 5px; text-align: center">
+        <p>자세한 내용을 적어주세요</p>
+        <textarea name = "questions" rows = "10" cols = "40" style = "resize: none; height: 200px;"></textarea>
+    </div>
+    <div style = "margin-top: 5px; padding: 0 5px; text-align: center">
+        <input type = "button" value = "문의사항 보내기" onclick = 'checkQuestion()'>
+    </div>
+
+</body>

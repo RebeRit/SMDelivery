@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>상명딜리버리 | 문의사항</title>
+    <link rel="stylesheet" href="css/common_css.css">
+    <link rel="shortcut icon" href="images/Favicon.ico">
+    <script type = "text/javascript" src = "js/showTalk.js"></script>
+</head>
+<body onresize = "parent.resizeTo(600,800)" onload="parent.resizeTo(600,800)">
+
+    <div id="page">
+ 
+        <header>
+            <div id="logo">
+                <img src="images/logo_main.png" style = "width: 200px; height: 80px;" alt="Logo">
+            </div>
+        </header>
+    </div>
+
+    <div style = "height: 50px; text-align: center;">
+        <h1 style = "margin-top: 20px; color: cornflowerblue">주 문 표</h1>
+    </div>
+    <div style = "margin-top: 5px; padding: 0 40px;">
+        <br>
+        <p>사용자의 성함을 적어주세요</p>
+        <input id = "name" type = "text" size = "40">
+    </div>
+    <div style = "margin-top: 5px; padding: 0 40px;">
+        <br>
+        <p>주소를 입력해 주세요.</p>
+        <input id = "address" type = "text" size = "40">
+    </div>
+    <div style = "margin-top: 5px; padding: 0 20px; text-align: center;">
+        <br>
+        <p>주문표 확인</p>
+        <textarea id = "textarea" readonly cols = "70" rows = "10" style = "resize: none; height: 300px; text-align: center;">
+        </textarea>
+        <script>
+            let list = "";
+            if(window.localStorage.length <= 1){
+                list = "주문하신 제품이 없습니다."
+                document.getElementById("textarea").value = list;
+            }
+            else{
+                for(let i = window.localStorage.length - 1; i >= 1; i--){
+                    const key = window.localStorage.key(i);
+                    list = list + key + " : " + localStorage.getItem(key) + "개\n\n";
+                }
+                list = list + "총 금액 : " + localStorage.getItem('총 금액') + "원\n";
+                document.getElementById("textarea").value = list;
+            }
+
+        </script>
+    </div>
+    <div style = "margin-top: 5px; padding: 0 5px; text-align: center">
+        <br>
+        <input type = "button" value = "주문하기" onclick = 'checkOrderQuestion()'>
+        <input type = "button" value = "초기화" onclick = 'checkResetQuestion()'>
+    </div>
+    <script>
+        let user = document.getElementById("name");
+        let user_add = document.getElementById("address");
+        let user_price = localStorage.getItem('총 금액');
+
+        function checkOrderQuestion(){
+            if(window.localStorage.length <= 1){
+                alert("주문표에 메뉴가 없습니다.");
+            }
+            else{
+                if(confirm("주문을 완료하시겠습니까?") == true){
+                    alert("주문이 완료되었습니다.\n주문자 : " + user.value + "\n주소 : " + user_add.value + "\n총액 : " + user_price + "원\n맛있는 식사를 도와드리는 상명딜리버리가 되겠습니다.");
+                    window.localStorage.clear();
+                    localStorage.setItem('총 금액', '0');
+                    window.close();
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+
+        function checkResetQuestion(){
+            if(confirm("주문표를 초기화하시겠습니까?") == true){
+                alert("초기화가 완료되었습니다.");
+                window.localStorage.clear();
+                localStorage.setItem('총 금액', '0');
+                window.location.reload();
+            }
+            else{
+                return false;
+            }
+        }
+
+        var totalPrice = JSON.parse(localStorage.getItem('총 금액'));
+    </script>
+
+</body>
