@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>상명딜리버리 | 주문</title>
+    <link rel="stylesheet" href="../../css/common_css.css">
+    <link rel="shortcut icon" href="../../images/Favicon.ico">
+    <script type = "text/javascript" src = "../../js/showTalk.js"></script>
+</head>
+<body>
+
+	<div class = "floatingKakaoTalk">
+			<img src = "../../images/chatting_icon.png" style = "width: 100%; height: 100%; cursor: pointer;"
+			onclick = "return showTalk_index()">
+	</div>
+    
+    <div id="page">
+        <header>
+            <div id="logo">
+                <a href = "../../index.html">
+                    <img src="../../images/logo_main.png" style = "width: 200px; height: 80px;" alt="Logo">
+              	</a>
+            </div>
+ 
+            <div id="top_menu">
+                <a href = "#" onclick = "return openBill_order()">주문하기</a>
+            </div>
+        </header>
+    </div>
+
+    <div id = "category_background">
+        <div id = "category_menulist">
+            <ul>
+                <li class = "active"><a href = "../category-001.html">치킨</a></li>
+                <li><a href = "../category-002.html">피자/양식</a></li>
+                <li><a href = "../category-003.html">햄버거</a></li>
+                <li><a href = "../category-004.html">중식</a></li>
+                <li><a href = "../category-005.html">일식/돈가스</a></li>
+                <li><a href = "../category-006.html">한식</a></li>
+                <li><a href = "../category-007.html">족발/보쌈</a></li>
+                <li><a href = "../category-008.html">야식</a></li>
+                <li><a href = "../category-009.html">분식</a></li>
+                <li><a href = "../category-010.html">디저트</a></li>
+                <li><a href = "../category-011.html">마트/편의점</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+    <div id = "category_list_background">
+        <div id = "restaurant_list">
+            <div class = "left_information">
+                <div class = "restaurant_cover_info">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class = "showLogo">
+                                    <div>
+                                        <img src = "../images/category_001/logo1.jpg" class = "logoimg" onerror = "this.src = '../images/default_logo.png'">
+                                    </div>
+                                </td>
+                                <td class = "showInfo">
+                                    <div class = "restaurant_name" title = "네네치킨">
+                                        네네치킨
+                                    </div>
+                                    <div class = "restaurant_stars">
+                                        <span>★ 4.8</span>
+                                        <span style = "color: #656565"> | </span>
+                                        <span>15,000원 이상 배달</span>
+                                    </div>
+                                    <div class = "restaurant_stars">
+                                        <span>결제 : 신용카드, 현금</span>
+                                    </div>
+                                    <div class = "restaurant_stars">
+                                        <span>배달시간 : 55분 이상</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class = "restaurant_menu_list">
+                    <details>
+                        <summary>시그니쳐 시리즈</summary>
+                        <a href = "#" onclick = "return addBill_order('어니언스노윙', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 108000px;">          
+                                                <div class = "restaurant_name" title = "어니언스노윙">
+                                                  어니언스노윙
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>바삭한 치킨에 네네만의 비법 가루가 솔솔~</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu1.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살어니언스노윙', 1, 21000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살어니언스노윙">
+                                                  순살어니언스노윙
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>바삭한 순살치킨에 네네만의 비법 가루가 솔솔~</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>21,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu2.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('치즈스노윙', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "치즈스노윙">
+                                                  치즈스노윙
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>바삭한 치킨에 네네만의 치즈 가루가 솔솔~</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu3.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살치즈스노윙', 1, 21000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살치즈스노윙">
+                                                  순살치즈스노윙
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>바삭한 순살치킨에 네네만의 치즈 가루가 솔솔~</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>21,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu4.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>양념 시리즈</summary>
+                        <a href = "#" onclick = "return soldOut('레드마블치킨')">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "레드마블치킨">
+                                                  레드마블치킨 (품절)
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>숯불 향이 가득한 레드소스에 마블크림의 환상 마블링!</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>20,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu5.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return soldOut('순살레드마블치킨')">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살레드마블치킨">
+                                                  순살레드마블치킨 (품절)
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>숯불 향이 가득한 레드소스에 마블크림의 환상 마블링!</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>22,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu6.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('코찡마요치킨', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "코찡마요치킨">
+                                                  코찡마요치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>코가 찡~ 톡 쏘는 고추냉이의 화끈한 맛</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu7.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살코찡마요치킨', 1, 21000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살코찡마요치킨">
+                                                  순살코찡마요치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>코가 찡~ 톡 쏘는 고추냉이의 화끈한 맛</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>21,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu8.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('크리미언치킨', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "크리미언치킨">
+                                                  크리미언치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>부드러운 크림과 고소하고 아삭한 양파의 만남</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu9.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>간장 시리즈</summary>
+                        <a href = "#" onclick = "return addBill_order('소이갈릭치킨', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "소이갈릭치킨">
+                                                  소이갈릭치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>고소한 마늘과 달콤한 간장소스의 환상적인 조화</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu10.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살소이갈릭치킨', 1, 21000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살소이갈릭치킨">
+                                                  순살소이갈릭치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>고소한 마늘과 달콤한 간장소스의 환상적인 조화</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>21,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu11.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>후라이드 시리즈</summary>
+                        <a href = "#" onclick = "return addBill_order('후라이드치킨', 1, 16000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "후라이드치킨">
+                                                  후라이드치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>겉은 바삭하고 속은 촉촉한 겉바속촉의 대명사</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>16,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu12.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살치킨', 1, 18000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살치킨">
+                                                  순살치킨
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>엄선된 신선육으로 만든 부드러운 순살 후라이드치킨</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>18,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu13.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('닭다리', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "닭다리">
+                                                  닭다리
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>쫄깃함의 최강자! 닭다리로만 구성된 후라이드치킨</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu14.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('윙봉', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "윙봉">
+                                                  윙봉
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>콜라겐이 가득한 닭날개로 쫄깃하면서 부드럽고 고소한 맛이 일품</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu15.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('닭날개', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "닭날개">
+                                                  닭날개
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>피부 미용 효과와 골다공증을 예방하는 콜라겐이 가득</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu16.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>반반 시리즈</summary>
+                        <a href = "#" onclick = "return addBill_order('뼈 반반', 1, 17000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "뼈 반반">
+                                                  뼈 반반
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>내 맘대로 구성하는 반반세트메뉴</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>17,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu17.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('순살 반반', 1, 19000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "순살 반반">
+                                                  순살 반반
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>내 맘대로 구성하는 순살 반반세트메뉴</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>19,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu18.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>사이드 메뉴</summary>
+                        <a href = "#" onclick = "return addBill_order('감자튀김', 1, 3000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "감자튀김">
+                                                  감자튀김
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>바삭하고 포슬포슬한 감자튀김~</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>3,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu19.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('치즈볼', 1, 3000)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "치즈볼">
+                                                  치즈볼
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>달콤하고 쫄깃한 치즈볼</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>3,000원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu20.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('치킨무', 1, 500)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "치킨무">
+                                                  치킨무
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>아삭하고 달콤한 치킨무</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>500원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu21.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                    <details>
+                        <summary>음료</summary>
+                        <a href = "#" onclick = "return addBill_order('사이다 1.25L', 1, 2500)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "사이다">
+                                                  사이다
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>칠성사이다 1.25L</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>2500원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu21.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href = "#" onclick = "return addBill_order('콜라 1.25L', 1, 2500)">
+                            <div class="restaurant_menu_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style = "width : 1050px;">          
+                                                <div class = "restaurant_name" title = "콜라">
+                                                  콜라
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>펩시콜라 1.25L</span>
+                                                </div>
+                                                <div class = "restaurant_stars">
+                                                    <span>2500원</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <img src = "../images/nenechicken/menu21.jpg" class = "foodimg" onerror = "this.src = '../images/default_food.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "footer_background">
+        <footer>
+            <div id = "anotherFooter">
+                <p style = "padding: 20px;">
+                    <strong style = "font-size: 13px;">2022학년도 2학기 상명대학교 게임전공 콘텐츠서비스개발 프로젝트</strong>
+                    <br><br>
+                    게임전공 콘텐츠서비스개발 기말과제 프로젝트로 진행된 'SMDelivery' 사이트입니다
+                    <span class = "bar">|</span>
+                    학생 정보 : 202111063 구현진
+                    <span class = "bar">|</span>
+                    이메일 주소 : reberit0000@gmail.com
+                    <span class = "bar">|</span>
+                    서버 제공 : 게임서버프로그래밍 Linux Server
+                </p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
